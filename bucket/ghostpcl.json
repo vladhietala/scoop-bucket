@@ -1,0 +1,57 @@
+{
+    "version": "9.56.1",
+    "description": "An interpreter for the PCL language and for PDF",
+    "homepage": "https://www.ghostscript.com",
+    "license": {
+        "identifier": "AGPL-3.0-or-later|Freeware",
+        "url": "https://www.ghostscript.com/license.html"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostpcl-9.56.1-win64.zip",
+            "hash": "sha512:3503046745c9975ddf2e7814f699d345add521fe41332cb57b88ab3788fe81e8713dabbd7aa022e1fe905ffac4721b1c04cd670c3c99838f69173dbaa852cc0a",
+            "extract_dir": "ghostpcl-9.56.1-win64",
+            "bin": [
+                "gpcl6win64.exe",
+                [
+                    "gpcl6win64.exe",
+                    "pcl6"
+                ]
+            ]
+        },
+        "32bit": {
+            "url": "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs9561/ghostpcl-9.56.1-win32.zip",
+            "hash": "sha512:a677e19565de3aa9945aedcf300b8072ed4ad91cd2ec821c75cb56bfe0d98d81f1314bb068cf1eff4d80f5be46cae99993fec6a0df5f26f97d85c37c22bbf8f2",
+            "extract_dir": "ghostpcl-9.56.1-win32",
+            "bin": [
+                "gpcl6win32.exe",
+                [
+                    "gpcl6win32.exe",
+                    "pcl6"
+                ]
+            ]
+        }
+    },
+    "extract_dir": [
+        ""
+    ],
+    "checkver": {
+        "github": "https://github.com/ArtifexSoftware/ghostpdl-downloads/",
+        "regex": "Ghostscript/GhostPDL ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs$cleanVersion/ghostpcl-$cleanVersion-win64.zip",
+                "extract_dir": "ghostpcl-$cleanVersion-win64"
+            },
+            "32bit": {
+                "url": "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs$cleanVersion/ghostpcl-$cleanVersion-win32.zip",
+                "extract_dir": "ghostpcl-$cleanVersion-win32"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/SHA512SUMS"
+        }
+    }
+}
